@@ -1,18 +1,29 @@
 #include "main.h"
-
 /**
-*  reverse_array - function that reverse content of array
-*  @a: array
-*  @n: number of elements
-*/
+ *_strncpy -  copies a string
+ *@dest: A pointer to an char that will be updated
+ *@src: A pointer to an char that will be updated
+ *@n: value
+ *Return: dest
+ */
 
-void reverse_array(int *a, int n)
+char *_strncpy(char *dest, char *src, int n)
+
 {
-int tmp, index;
-for (index = n - 1; index > n / 2; index--)
-{
-tmp = a[n - 1 - index];
-a[n - 1 - index] = a[index];
-a[index] = tmp;
-}
+	int i;
+
+	i = 0;
+	while (i < n && src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+
+	return (dest);
 }
